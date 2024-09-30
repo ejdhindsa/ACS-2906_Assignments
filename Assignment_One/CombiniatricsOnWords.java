@@ -26,8 +26,27 @@ public class CombiniatricsOnWords {
         int userInput = kb.nextInt();
 
         // calling a method that will convert the integer into a binary value
-        int binaryValue = convertToBinary(userInput);
+        short binaryValue = convertToBinary(userInput);
 
     } // end of main
+
+    /******************************************************
+     * @method convertToBinary
+     * @param userInput Integer that is to be converted into its binary value
+     * @return binaryValue returns a binary value
+     *
+     * The following method converts integer that has been passed a parameter to the method
+     * into a binary value, which is then returned to the main method
+    *****************************************************/
+    public static short convertToBinary(int userInput)
+    {
+        short binaryValue = 0;
+        // now creating an algorithm that will convert integer values to binary values
+
+
+        // returns the value
+        return binaryValue;
+
+    } // end of convert binary
 
 } // end of class

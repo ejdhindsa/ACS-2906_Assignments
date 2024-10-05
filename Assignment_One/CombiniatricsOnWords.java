@@ -14,6 +14,7 @@
 
 //  import statements
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class CombiniatricsOnWords {
     public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class CombiniatricsOnWords {
         int userInput = kb.nextInt();
 
         // calling a method that will convert the integer into a binary value
-        short binaryValue = convertToBinary(userInput);
+        ArrayList<Integer> binaryValue = convertToBinary(userInput);
 
     } // end of main
 
@@ -38,14 +39,27 @@ public class CombiniatricsOnWords {
      * The following method converts integer that has been passed a parameter to the method
      * into a binary value, which is then returned to the main method
     *****************************************************/
-    public static short convertToBinary(int userInput)
+    public static ArrayList<Integer> convertToBinary(int userInput)
     {
-        short binaryValue = 0;
-        // now creating an algorithm that will convert integer values to binary values
+        // creating an arraylist that will hold the binary bits of the userInput
+        ArrayList<Integer> binaryValues = new ArrayList<>();
+
+        // creating an integer that will be a factorial of two
+        // this int will be the value which will tell how many bits the userInput will be of
+        int highestBit = 1;
+
+        // this while-loop iterates as long as the highest bit is not higher than the user input,
+        // therefore giving an exaxct number of bits for the input value
+        while (userInput > Math.pow(2, highestBit))
+        {
+            highestBit++;
+        } // end of while
+
+        System.out.println(highestBit);
 
 
         // returns the value
-        return binaryValue;
+        return binaryValues;
 
     } // end of convert binary
 

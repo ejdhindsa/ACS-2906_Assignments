@@ -50,13 +50,32 @@ public class CombiniatricsOnWords {
 
         // this while-loop iterates as long as the highest bit is not higher than the user input,
         // therefore giving an exaxct number of bits for the input value
-        while (userInput > Math.pow(2, highestBit))
+        while (userInput >= Math.pow(2, highestBit))
         {
             highestBit++;
         } // end of while
 
         System.out.println(highestBit);
 
+        for(int i = highestBit - 1; i >= 0; i--)
+        {
+            if((userInput - Math.pow(2, i)) < 0)
+            {
+                binaryValues.add(1);
+            } // end of else
+            else
+            {
+                binaryValues.add(0);
+            } // end of else
+
+            userInput = userInput - ((int) Math.pow(2, i));
+
+        } // end of for
+
+        for (int i : binaryValues)
+        {
+            System.out.print(i);
+        } // end of for
 
         // returns the value
         return binaryValues;

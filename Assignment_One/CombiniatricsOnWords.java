@@ -74,8 +74,15 @@ public class CombiniatricsOnWords {
 
         // printing both arrays
         System.out.println();
-        System.out.println(Arrays.toString(binarySplitOne));
-        System.out.println(Arrays.toString(binarySplitTwo));
+        printArray(binarySplitOne);
+        printArray(binarySplitTwo);
+
+        // using a method convert the split binary values to decimal
+        int splitOne = convertToDecimal(binarySplitOne);
+        int splitTwo = convertToDecimal(binarySplitTwo);
+
+        System.out.println(splitOne);
+        System.out.println(splitTwo);
 
     } // end of main
 
@@ -94,7 +101,7 @@ public class CombiniatricsOnWords {
         // creating an algorithm that will convert the decimal values to binary values
         // creating variables required for said algorithms
         int quotient = userInput;
-        int remainder = 0;
+        int remainder;
 
         // creating a while loop until the quotient becomes 0
         while (quotient != 0) {
@@ -119,6 +126,30 @@ public class CombiniatricsOnWords {
         return binaryValues;
 
     } // end of convert binary
+
+    /******************************************************
+     * @method convertToDecimal
+     * @param binaryArray binary array that is to be converted into an integer
+     * @return decimalValue value of binary as an int
+     *
+     * @description The following method converts the binary array to the int value
+     *****************************************************/
+    public static int convertToDecimal(int[] binaryArray)
+    {
+        int decimalValue;
+        String binaryValueString = "";
+
+        for (int items : binaryArray)
+        {
+            binaryValueString += items;
+        } // end of for-each
+
+        // now using the Integer package method to convert to binary
+        decimalValue = Integer.parseInt(binaryValueString, 2);
+
+        return decimalValue;
+
+    } // end of convertToDecimal
 
     // -------------------------------------------------------------
     // -------------------- UTILITY METHODS ------------------------
@@ -151,8 +182,10 @@ public class CombiniatricsOnWords {
         // printing the array using for loop
         for (int items : array)
         {
-            System.out.println(items);
+            System.out.print(items);
         } // end of for-each
+
+        System.out.println();
 
     } // end of printArray
 

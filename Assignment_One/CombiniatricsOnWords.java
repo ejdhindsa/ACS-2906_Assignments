@@ -15,6 +15,7 @@
 //  import statements
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CombiniatricsOnWords {
     public static void main(String[] args) {
@@ -44,40 +45,32 @@ public class CombiniatricsOnWords {
         // creating an arraylist that will hold the binary bits of the userInput
         ArrayList<Integer> binaryValues = new ArrayList<>();
 
-        // creating an integer that will be a factorial of two
-        // this int will be the value which will tell how many bits the userInput will be of
-        int highestBit = 1;
+        // creating an algorithm that will convert the decimal values to binary values
+        // creating variables required for said algorithms
+        int quotient = userInput;
+        int remainder = 0;
 
-        // this while-loop iterates as long as the highest bit is not higher than the user input,
-        // therefore giving an exaxct number of bits for the input value
-        while (userInput >= Math.pow(2, highestBit))
+        // creating a while loop until the quotient becomes 0
+        while(quotient != 0)
         {
-            highestBit++;
+            // since we are working with decimal values, the remainder when divided by two
+            // provides the binary conversion (when reversed)
+            remainder = quotient % 2;
+
+            // now containing this value in the arraylist
+            binaryValues.add(remainder);
+
+            // to move forward to the next bit, we will change the quotient to half of what it is
+            // i.e. divide it by the binary base of quotient
+            quotient /= 2;
+
         } // end of while
 
-        System.out.println(highestBit);
+        // since we have found the binary value but the order of the binary value is reversed
+        // we will reverse the arraylist using the Collections package
+        Collections.reverse(binaryValues);
 
-        for(int i = highestBit - 1; i >= 0; i--)
-        {
-            if((userInput - Math.pow(2, i)) < 0)
-            {
-                binaryValues.add(1);
-            } // end of else
-            else
-            {
-                binaryValues.add(0);
-            } // end of else
-
-            userInput = userInput - ((int) Math.pow(2, i));
-
-        } // end of for
-
-        for (int i : binaryValues)
-        {
-            System.out.print(i);
-        } // end of for
-
-        // returns the value
+        // returns the binary value
         return binaryValues;
 
     } // end of convert binary

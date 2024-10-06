@@ -30,6 +30,10 @@ public class CombiniatricsOnWords {
         // calling a method that will convert the integer into a binary value
         ArrayList<Integer> binaryValue = convertToBinary(userInput);
 
+        // printing out the binary values of userInput
+        System.out.print("Binary Value: 0B");
+        printArrayList(binaryValue);
+
     } // end of main
 
     /******************************************************
@@ -74,5 +78,21 @@ public class CombiniatricsOnWords {
         return binaryValues;
 
     } // end of convert binary
+
+    /**************************************************************
+     * @method printArrayList
+     * @param arrayList Array List that is needed to be printed
+     *
+     * The following method prints the arraylist to the console
+     *************************************************************/
+    public static void printArrayList(ArrayList<Integer> arrayList)
+    {
+        // using a for each loop to print the contents of arraylist
+        for ( int items : arrayList)
+        {
+            System.out.print(items);
+        } // end of for-each
+
+    } // end of printArrayList
 
 } // end of class

@@ -25,15 +25,11 @@ public class CombiniatricsOnWords {
         Scanner kb = new Scanner(System.in);
 
         // asking user for the int at which required operations will be performed
-        System.out.println("Please enter an integer value:");
+        System.out.println("Enter an integer x:");
         int userInput = kb.nextInt();
 
         // calling a method that will convert the integer into a binary value
         ArrayList<Integer> binaryValue = convertToBinary(userInput);
-
-        // printing out the binary values of userInput
-        System.out.print("Binary Value: 0B");
-        printArrayList(binaryValue);
 
         // now to the equal division of the binary values into two separate entities
 
@@ -72,17 +68,13 @@ public class CombiniatricsOnWords {
         reverseArray(binarySplitOne);
         reverseArray(binarySplitTwo);
 
-        // printing both arrays
-        System.out.println();
-        printArray(binarySplitOne);
-        printArray(binarySplitTwo);
-
         // using a method convert the split binary values to decimal
         int splitOne = convertToDecimal(binarySplitOne);
         int splitTwo = convertToDecimal(binarySplitTwo);
 
-        System.out.println(splitOne);
-        System.out.println(splitTwo);
+        System.out.println("x \ty");
+        System.out.println(splitOne + "\t" + splitTwo);
+
 
     } // end of main
 

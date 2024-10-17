@@ -72,7 +72,7 @@ public class CombiniatricsOnWords {
         int splitOne = convertToDecimal(binarySplitOne);
         int splitTwo = convertToDecimal(binarySplitTwo);
 
-        System.out.println("x \ty");
+        System.out.println("y \tz");
         System.out.println(splitOne + "\t" + splitTwo);
 
     } // end of main

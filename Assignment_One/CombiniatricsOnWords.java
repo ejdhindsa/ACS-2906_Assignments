@@ -75,7 +75,6 @@ public class CombiniatricsOnWords {
         System.out.println("x \ty");
         System.out.println(splitOne + "\t" + splitTwo);
 
-
     } // end of main
 
     /******************************************************
@@ -192,6 +191,6 @@ public class CombiniatricsOnWords {
         // calling the Collections package and reversing the arrays
         Collections.reverse(Arrays.asList(array));
 
-    } // end of class
+    } // end of reverseArray()
 
-}
+} // end of main
